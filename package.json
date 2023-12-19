@@ -4,7 +4,9 @@
   "description": "The Backend for Patientor App, based on [Full Stack Open - Chapter 9 TypeScript](https://fullstackopen.com/en/part9/typing_an_express_app)",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "dev": "ts-node-dev index.ts",
+    "lint": "eslint --ext .ts . --fix"
   },
   "keywords": [],
   "author": "",
