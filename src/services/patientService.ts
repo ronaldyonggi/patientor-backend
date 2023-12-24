@@ -1,6 +1,6 @@
 import patients from '../../data/patients';
 
-import { NonSSNPatient } from '../../types';
+import { NonSSNPatient } from '../types';
 
 const getNonSSNPatients = (): NonSSNPatient[] => {
     return patients.map(({id, name, dateOfBirth, gender, occupation}) => (
