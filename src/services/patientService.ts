@@ -10,8 +10,10 @@ const getNonSSNPatients = (): NonSSNPatient[] => {
         }));
 };
 
-const addPatient = (entry: NewPatientEntry): Patient => {
-    const newPatientEntry = {
+const getPatient = (id: string): NonSSNPatient | undefined => {
+    const patientsNoSSN = getNonSSNPatients();
+    return patientsNoSSN.find(p => p.id === id)
+}
         id: uuidv1(),
         ...entry
     };
@@ -22,5 +24,6 @@ const addPatient = (entry: NewPatientEntry): Patient => {
 
 export default {
     getNonSSNPatients,
+    getPatient,
     addPatient
 };
