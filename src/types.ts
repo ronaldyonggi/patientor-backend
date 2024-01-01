@@ -15,6 +15,7 @@ export interface Patient {
     ssn: string;
     gender: string;
     occupation: string;
+    entries: Entry[];
 }
 
 export enum Gender {
