@@ -1,4 +1,4 @@
-import { NewPatientEntry } from "./types";
+import { NewPatient } from "./types";
 import { Gender } from "./types";
 
 // ====================================== STRING TYPE GUARD =================================================
@@ -55,25 +55,25 @@ const parseGender = (gender: unknown): Gender => {
     return gender;
 };
 
-// ====================================== toNewPatientEntry =================================================
-const toNewPatientEntry = (object: unknown): NewPatientEntry => {
+// ====================================== toNewPatient =================================================
+const toNewPatient = (object: unknown): NewPatient => {
     if ( !object || typeof object !== 'object') {
         throw new Error('Incorrect or missing data');
     }
 
     if ('name' in object && 'dateOfBirth' in object && 'ssn' in object && 'gender' in object && 'occupation' in object) {
-        const newEntry: NewPatientEntry = {
+        const newPatient: NewPatient = {
             name: parseName(object.name),
             dateOfBirth: parseDOB(object.dateOfBirth),
             ssn: parseSSN(object.ssn),
             gender: parseGender(object.gender),
-            occupation: parseOccupation(object.occupation)
+            occupation: parseOccupation(object.occupation),
         };
 
-        return newEntry;
+        return newPatient;
     }
 
     throw new Error('Incorrect input data!');
 };
 
-export default toNewPatientEntry;
+export default toNewPatient;
