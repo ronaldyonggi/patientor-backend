@@ -1,5 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface Entry{
+interface BaseEntry {
+    id: string;
+    description: string;
+    date: string;
+    specialist: string;
+    diagnosisCodes?: Array<Diagnosis['code']>;
 }
 
 export interface Diagnosis {
