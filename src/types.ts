@@ -17,6 +17,12 @@ interface HealthCheckEntry extends BaseEntry {
     type: "HealthCheck";
     healthCheckRating: HealthCheckRating;
 }
+
+export type Entry =
+    | HospitalEntry
+    | OccupationalHealthcareEntry
+    | HealthCheckEntry;
+
 export interface Diagnosis {
     code: string;
     name: string;
@@ -41,4 +47,5 @@ export enum Gender {
 export type NonSSNPatient = Omit<Patient, 'ssn'>;
 export type NewPatient = Omit<Patient, 'id'>;
 export type NonSensitivePatient = Omit<NonSSNPatient, 'entries'>;
+
 
