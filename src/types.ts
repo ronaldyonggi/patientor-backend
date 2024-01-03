@@ -6,6 +6,12 @@ interface BaseEntry {
     diagnosisCodes?: Array<Diagnosis['code']>;
 }
 
+export enum HealthCheckRating {
+    "Healthy" = 0,
+    "LowRisk" = 1,
+    "HighRisk" = 2,
+    "CriticalRisk" = 3
+}
 export interface Diagnosis {
     code: string;
     name: string;
