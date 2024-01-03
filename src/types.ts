@@ -28,6 +28,17 @@ interface HospitalEntry extends BaseEntry {
     discharge: Discharge;
 }
 
+interface SickLeave {
+    startDate: string;
+    endDate: string;
+}
+
+interface OccupationalHealthcareEntry extends BaseEntry {
+    type: "OccupationalHealthcare";
+    employerName: string;
+    sickLeave?: SickLeave;
+}
+
 export type Entry =
     | HospitalEntry
     | OccupationalHealthcareEntry
@@ -51,7 +62,8 @@ export interface Patient {
 
 export enum Gender {
     Male = 'male',
-    Female = 'female'
+    Female = 'female',
+    Other = 'other'
 }
 
 export type NonSSNPatient = Omit<Patient, 'ssn'>;
