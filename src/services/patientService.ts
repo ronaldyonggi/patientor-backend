@@ -12,8 +12,8 @@ const getNonSSNPatients = (): NonSSNPatient[] => {
 
 const getPatient = (id: string): NonSSNPatient | undefined => {
     const patientsNoSSN = getNonSSNPatients();
-    return patientsNoSSN.find(p => p.id === id)
-}
+    return patientsNoSSN.find(p => p.id === id);
+};
 
 const addPatient = (object: NewPatient): Patient => {
     const newPatientObject = {
