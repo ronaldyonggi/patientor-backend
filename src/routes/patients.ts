@@ -22,11 +22,11 @@ router.post('/', (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', (req, res) => {
     try {
-        const id = req.params.id
-        const patient = await patientService.getPatient(id)
-        res.json(patient)
+        const id = req.params.id;
+        const patient = patientService.getPatient(id);
+        res.json(patient);
     } catch(error: unknown) {
         let errorMessage = 'Something went wrong.';
         if (error instanceof Error) {
