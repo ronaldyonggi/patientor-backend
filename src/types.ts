@@ -25,13 +25,12 @@ interface Discharge{
 
 interface HospitalEntry extends BaseEntry {
     type: "Hospital";
-    discharge: Discharge;
+    discharge: {
+        date: string;
+        criteria: string;
+    }
 }
 
-interface SickLeave {
-    startDate: string;
-    endDate: string;
-}
 
 interface OccupationalHealthcareEntry extends BaseEntry {
     type: "OccupationalHealthcare";
